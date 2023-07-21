@@ -16,8 +16,6 @@ train = pd.read_csv('train.csv')
 # print(train)
 
 print(train.info(), '\n')
-
-print(train.describe(), '\n')
 ```
 
 ```
@@ -41,7 +39,13 @@ Data columns (total 12 columns):
 dtypes: float64(2), int64(5), object(5)
 memory usage: 83.7+ KB
 None 
+```
 
+```
+print(train.describe(), '\n')
+```
+
+```
        PassengerId    Survived      Pclass         Age       SibSp       Parch        Fare
 count   891.000000  891.000000  891.000000  714.000000  891.000000  891.000000  891.000000
 mean    446.000000    0.383838    2.308642   29.699118    0.523008    0.381594   32.204208
