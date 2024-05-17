@@ -217,6 +217,9 @@ plt.show()
 
 ### 5. [0,4π] 500点5个隐藏层2000周期_120神经元数
 
+<p align="center">
+<img src="https://19640810.xyz/05_image/01_imageHost/20240517-172903.png" alt="Image Description" width="700">
+</p>
 
 ```py
 import numpy as np
