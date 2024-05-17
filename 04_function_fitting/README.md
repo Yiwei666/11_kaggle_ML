@@ -2,7 +2,7 @@
 
 # 1. 正弦函数拟合
 
-### 1. 300点3个隐藏层1500周期
+### 1. [0,4pi]300点3个隐藏层1500周期
 
 <p align="center">
 <img src="https://19640810.xyz/05_image/01_imageHost/20240517-164955.png" alt="Image Description" width="700">
