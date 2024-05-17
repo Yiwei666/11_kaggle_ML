@@ -108,7 +108,7 @@ plt.show()
 ```
 
 
-### 3. [0,4π] 500点7个隐藏层2500周期
+### 3. [0,4π] 500点7个隐藏层2500周期_128神经元数
 
 <p align="center">
 <img src="https://19640810.xyz/05_image/01_imageHost/20240517-171109.png" alt="Image Description" width="700">
@@ -161,8 +161,58 @@ plt.legend()
 plt.show()
 ```
 
+### 4. [0,4π] 500点7个隐藏层2500周期_100神经元数
 
+- 保持了原有的网络层数，但改变了每层的神经元数量
 
+<p align="center">
+<img src="https://19640810.xyz/05_image/01_imageHost/20240517-171648.png" alt="Image Description" width="700">
+</p>
+
+```py
+import numpy as np
+import matplotlib.pyplot as plt
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.optimizers import Adam
+
+# Generate the dataset for [0, 4π] with more points
+x = np.linspace(0, 4 * np.pi, 500)  # Number of data points
+y = np.sin(x)
+
+# Define a neural network model with adjusted neurons per layer
+def build_model():
+    model = Sequential()
+    model.add(Dense(64, input_dim=1, activation='relu'))  # Input layer with 64 neurons
+    model.add(Dense(100, activation='relu'))  # First hidden layer with 100 neurons
+    model.add(Dense(100, activation='relu'))  # Second hidden layer with 100 neurons
+    model.add(Dense(50, activation='relu'))   # Third hidden layer with 50 neurons
+    model.add(Dense(50, activation='relu'))   # Fourth hidden layer with 50 neurons
+    model.add(Dense(25, activation='relu'))   # Fifth hidden layer with 25 neurons
+    model.add(Dense(1, activation='linear'))  # Output layer with linear activation
+    model.compile(loss='mean_squared_error', optimizer=Adam(learning_rate=0.001))
+    return model
+
+# Create the model
+nn_model = build_model()
+
+# Fit the model to the data
+nn_model.fit(x[:, np.newaxis], y, epochs=2000, verbose=0)  # Increased epochs for deeper network
+
+# Predict the values on a dense grid for smooth plotting
+x_fit = np.linspace(0, 4 * np.pi, 5000)
+y_fit = nn_model.predict(x_fit[:, np.newaxis])
+
+# Plot the original data and the neural network fit for the new interval
+plt.figure(figsize=(12, 8))
+plt.plot(x, y, 'o', label='Original Data [0, 4π]')
+plt.plot(x_fit, y_fit, '-', label='Adjusted Neuron Network Fit [0, 4π]')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Adjusted Neuron Network Fit for y = sin(x) over [0, 4π]')
+plt.legend()
+plt.show()
+```
 
 
 
