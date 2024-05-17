@@ -1,6 +1,6 @@
 
 
-# 1. 函数拟合
+# 1. 正弦函数拟合
 
 ### 1. 正弦函数
 
@@ -50,6 +50,17 @@ plt.title('Optimized Neural Network Fit for y = sin(x) over [0, 4π]')
 plt.legend()
 plt.show()
 ```
+
+<p align="center">
+<img src="https://19640810.xyz/05_image/01_imageHost/20240517-170028.png" alt="Image Description" width="700">
+</p>
+
+
+
+
+
+
+
 
 
 
