@@ -56,7 +56,11 @@ plt.show()
 </p>
 
 
-### 2. 
+### 2. [0,4π] 500点5个隐藏层2000周期
+
+<p align="center">
+<img src="https://19640810.xyz/05_image/01_imageHost/20240517-170453.png" alt="Image Description" width="700">
+</p>
 
 ```py
 import numpy as np
