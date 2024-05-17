@@ -1,6 +1,6 @@
+# 正弦函数拟合
 
-
-# 1. 正弦函数拟合
+# 1. 改变训练集大小
 
 ### 1. [0,4π] 300点3个隐藏层1500周期
 
@@ -56,7 +56,11 @@ plt.show()
 </p>
 
 
+### 2. [0,4π] 600点3个隐藏层1500周期
 
+<p align="center">
+<img src="https://19640810.xyz/05_image/01_imageHost/20240517-174357.png" alt="Image Description" width="700">
+</p>
 
 ```py
 import numpy as np
@@ -93,15 +97,16 @@ y_fit = nn_model.predict(x_fit[:, np.newaxis])
 # Plot the original data and the neural network fit for the new interval
 plt.figure(figsize=(12, 8))
 plt.plot(x, y, 'o', label='Original Data [0, 4π]')
-plt.plot(x_fit, y_fit, '-', label='Neural Network Fit with More Training Points [0, 4π]')
+plt.plot(x_fit, y_fit, '-', label='Neural Network Fit [0, 4π]')
 plt.xlabel('x')
 plt.ylabel('y')
-plt.title('Neural Network Fit for y = sin(x) with More Training Points over [0, 4π]')
-plt.legend()
+plt.title('Neural Network Fit for y = sin(x) over [0, 4π]')
+plt.legend(loc='upper right')  # Explicitly setting the legend location
 plt.show()
 ```
 
 
+# 2. 改变隐藏层数量
 
 ### 2. [0,4π] 500点5个隐藏层2000周期
 
